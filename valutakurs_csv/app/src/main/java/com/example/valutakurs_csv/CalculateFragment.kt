@@ -65,5 +65,6 @@ class CalculateFragment:Fragment(){
         val inn = (java.lang.Double.parseDouble(txtValue.text.toString()))
         val ut = inn*(curVal1/curVal2)
         utTekst.text ="%.2f $s1 %.2f $s2".format(inn,ut)
+        txtValue.setText("")
     }
 }

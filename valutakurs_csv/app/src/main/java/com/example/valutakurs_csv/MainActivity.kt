@@ -23,26 +23,6 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"ikke ferdig lastet inn",Toast.LENGTH_SHORT).show()
         }
         Toast.makeText(this,"done",Toast.LENGTH_SHORT).show()
-        /*var fileText = applicationContext.assets.open("dkk.csv").bufferedReader().use{
-            it.readLines()
-        }
-        parser.parseFile(fileText,0)
-        fileText = applicationContext.assets.open("dollar.csv").bufferedReader().use{
-            it.readLines()
-        }
-        parser.parseFile(fileText,1)
-        fileText = applicationContext.assets.open("euro.csv").bufferedReader().use{
-            it.readLines()
-        }
-        parser.parseFile(fileText,2)
-        fileText = applicationContext.assets.open("pund.csv").bufferedReader().use{
-            it.readLines()
-        }
-        parser.parseFile(fileText,3)
-        fileText = applicationContext.assets.open("sek.csv").bufferedReader().use{
-            it.readLines()
-        }
-        parser.parseFile(fileText,4)*/
         parser.lagNorge()
         val navBottom = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         navBottom.setOnNavigationItemSelectedListener(navListener)
@@ -60,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         val calcFragment = CalculateFragment()
         val compChartFragment = ChartFragment()
         val devChartFragment = ChartFragment()
+        devChartFragment.devCompare = true
 
         when (item.itemId) {
             R.id.nav_calculate -> selectedFragment = calcFragment

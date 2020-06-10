@@ -60,5 +60,16 @@ class DataParser {
     fun getDates():MutableList<String>{
         return datoer
     }
+    fun makeCombinations(): MutableList<String>{
+        val l =mutableListOf<String>()
+        for(s1 in name) {
+            for(s2 in name){
+                if(s1 != s2){
+                    l.add("%s_vs_%s.png".format(s1,s2))
+                }
+            }
+        }
+        return l
+    }
 
 }

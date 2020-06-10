@@ -11,4 +11,40 @@
         <item>USD</item>
         <item>GBP</item>
     </string-array>
+    <string-array name="developmentAll">
+        <item>dev</item>
+        <item>compare</item>
+    </string-array>
+    <string-array name="compareCurrency">
+        <item>NOK_vs_DKK</item>
+        <item>NOK_vs_EUR</item>
+        <item>NOK_vs_GBP</item>
+        <item>NOK_vs_USD</item>
+        <item>NOK_vs_SEK</item>
+        <item>DKK_vs_USD</item>
+        <item>DKK_vs_EUR</item>
+        <item>DKK_vs_GBP</item>
+        <item>DKK_vs_SEK</item>
+        <item>DKK_vs_NOK</item>
+        <item>USD_vs_DKK</item>
+        <item>USD_vs_EUR</item>
+        <item>USD_vs_GBP</item>
+        <item>USD_vs_SEK</item>
+        <item>USD_vs_NOK</item>
+        <item>EUR_vs_DKK</item>
+        <item>EUR_vs_USD</item>
+        <item>EUR_vs_GBP</item>
+        <item>EUR_vs_SEK</item>
+        <item>EUR_vs_NOK</item>
+        <item>GBP_vs_DKK</item>
+        <item>GBP_vs_USD</item>
+        <item>GBP_vs_EUR</item>
+        <item>GBP_vs_SEK</item>
+        <item>GBP_vs_NOK</item>
+        <item>SEK_vs_DKK</item>
+        <item>SEK_vs_USD</item>
+        <item>SEK_vs_EUR</item>
+        <item>SEK_vs_GBP</item>
+        <item>SEK_vs_NOK</item>
+    </string-array>
 </resources>
