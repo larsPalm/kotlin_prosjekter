@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string-array name="weight">
+        <item>kilos</item>
+        <item>pound</item>
+        <item>stones</item>
+        <item>tons</item>
+    </string-array>
+
+    <string-array name="distance">
+        <item>meter</item>
+        <item>yard</item>
+        <item>miles</item>
+        <item>kilometers</item>
+        <item>mil</item>
+    </string-array>
+
+    <string-array name="fluid">
+        <item>liter</item>
+        <item>cup</item>
+        <item>gallon(US)</item>
+        <item>gallon(UK)</item>
+    </string-array>
+
+</resources>
