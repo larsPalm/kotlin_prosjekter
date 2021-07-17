@@ -1,6 +1,7 @@
 package com.example.kotlinvalutaapp
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Base64
@@ -54,7 +55,8 @@ class ImgActivity : AppCompatActivity() {
     }
 
     fun toMain(view: View) {
-
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
     fun fetchImg(view: View) {
         val v1 = spinnerFrom!!.selectedItem.toString()
