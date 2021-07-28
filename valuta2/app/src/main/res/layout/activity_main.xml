@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#FFEB3B"
         app:layout_constraintBottom_toBottomOf="@+id/fragment_container"
         app:layout_constraintStart_toStartOf="@+id/fragment_container"
         app:menu="@menu/botom_navigation" />

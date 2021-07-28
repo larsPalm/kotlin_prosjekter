@@ -3,13 +3,16 @@
     <item
         android:id="@+id/btnConvert"
         android:title= "convert"
+        android:icon="@drawable/ic_convert"
         ></item>
     <item
         android:id="@+id/btnCompare"
         android:title= "compare"
+        android:icon="@drawable/ic_compare"
         ></item>
     <item
         android:id="@+id/btnCompMult"
         android:title= "comp multiple"
+        android:icon="@drawable/ic_comp_mult"
         ></item>
 </menu>
