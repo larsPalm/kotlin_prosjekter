@@ -28,7 +28,7 @@ har følgende funksjonalitet:
 - Bruker disse dataene til å oversette mellom valutaene
 - Henter bildet på base64 format, lagrer det i sharedPref og viser bildet.
 - Bildet er en graf over utviklingen mellom to valutaer gjennom flere mnd
-- Henter et ekstra bilde kontra det KotlinValutaApp gjør. Bildet er blir hentet\
+- Henter et ekstra bilde kontra det KotlinValutaApp gjør. Bildet er blir hentet
 lagret på base64-format
   - bildet viser flere valutaer sin utvikling mot en "base" valuta gjennom flere mnd
 ```
