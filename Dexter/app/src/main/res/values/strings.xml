@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Dexter</string>
+    <!-- Shared Preferences Files -->
+    <string name="preference_user_data">com.example.dexter.PREFERENCE_USER_DATA</string>
+</resources>
