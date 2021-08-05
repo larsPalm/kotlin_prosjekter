@@ -32,3 +32,14 @@ har følgende funksjonalitet:
 lagret på base64-format
   - bildet viser flere valutaer sin utvikling mot en "base" valuta gjennom flere mnd
 ```
+```
+dexter:
+En pokedex som lar bruker søke etter pokemon basert på enten navn eller nummer
+har følgende funksjonalitet:
+- Kobler seg til egen server som er skrevet i django
+- Henter info om pokemon og lagrer det i sharedPref, gir evt feilmelding om navn/nummer er feil
+- Bruker disse dataene til å vise info om den aktuelle pokemonen
+- Henter bildet på base64 format, lagrer det i sharedPref og viser bildet.
+- Bildet er av en pokemon
+- NB: har ikke funktionalitet for å rotere mobil/emulator
+```
