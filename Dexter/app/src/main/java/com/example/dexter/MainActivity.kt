@@ -10,10 +10,7 @@ import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import java.lang.Exception
 
@@ -26,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var img: ImageView? = null
     private var number: TextView? = null
     private var valg:EditText? = null
+    private var imgLayout:LinearLayout? = null
     private var TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         img = findViewById(R.id.img)
         valg = findViewById(R.id.pokemonText)
         valg!!.setImeOptions(EditorInfo.IME_ACTION_DONE)
+        imgLayout = findViewById(R.id.imgLayout)
+        imgLayout!!.visibility = View.INVISIBLE
 
     }
 
@@ -63,15 +63,18 @@ class MainActivity : AppCompatActivity() {
                 val decodedByte =
                                 BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                 img!!.setImageBitmap(decodedByte)
+                noImg!!.setText("")
+                imgLayout!!.visibility = View.VISIBLE
             }catch(e:Exception){
                 noImg!!.setText("no image available")
+                imgLayout!!.visibility = View.INVISIBLE
             }
         }
         else{
             noImg!!.setText("some error occured")
+            imgLayout!!.visibility = View.INVISIBLE
         }
         closeSoftKeyboard(this, valg!!)
-        
     }
 
     fun refresh(view: View) {
@@ -85,12 +88,17 @@ class MainActivity : AppCompatActivity() {
                 val decodedString = Base64.decode(SharedPrefInterface(this).getStoredImg(), Base64.DEFAULT)
                 val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
                 img!!.setImageBitmap(decodedByte)
+                noImg!!.setText("")
+                imgLayout!!.visibility = View.VISIBLE
             }catch(e:Exception){
                noImg!!.setText("no image available")
+                imgLayout!!.visibility = View.INVISIBLE
             }
         }
         else{
            noImg!!.setText("some error occured")
+            imgLayout!!.visibility = View.INVISIBLE
+
         }
     }
 

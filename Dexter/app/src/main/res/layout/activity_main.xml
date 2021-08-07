@@ -98,7 +98,8 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:layout_gravity="center"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:id="@+id/imgLayout">
 
         <ImageView
             android:layout_width="match_parent"
