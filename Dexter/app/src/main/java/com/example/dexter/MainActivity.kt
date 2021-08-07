@@ -66,11 +66,21 @@ class MainActivity : AppCompatActivity() {
                 noImg!!.setText("")
                 imgLayout!!.visibility = View.VISIBLE
             }catch(e:Exception){
+                name!!.setText("")
+                type!!.setText("")
+                attribut!!.setText("")
+                vekt!!.setText("")
+                number!!.setText("")
                 noImg!!.setText("no image available")
                 imgLayout!!.visibility = View.INVISIBLE
             }
         }
         else{
+            name!!.setText("")
+            type!!.setText("")
+            attribut!!.setText("")
+            vekt!!.setText("")
+            number!!.setText("")
             noImg!!.setText("some error occured")
             imgLayout!!.visibility = View.INVISIBLE
         }
@@ -91,11 +101,21 @@ class MainActivity : AppCompatActivity() {
                 noImg!!.setText("")
                 imgLayout!!.visibility = View.VISIBLE
             }catch(e:Exception){
-               noImg!!.setText("no image available")
+                name!!.setText("")
+                type!!.setText("")
+                attribut!!.setText("")
+                vekt!!.setText("")
+                number!!.setText("")
+                noImg!!.setText("no image available")
                 imgLayout!!.visibility = View.INVISIBLE
             }
         }
         else{
+            name!!.setText("")
+            type!!.setText("")
+            attribut!!.setText("")
+            vekt!!.setText("")
+            number!!.setText("")
            noImg!!.setText("some error occured")
             imgLayout!!.visibility = View.INVISIBLE
 
