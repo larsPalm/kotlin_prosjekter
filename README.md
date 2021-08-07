@@ -42,4 +42,5 @@ har følgende funksjonalitet:
 - Henter bildet på base64 format, lagrer det i sharedPref og viser bildet.
 - Bildet er av en pokemon
 - NB: har ikke funktionalitet for å rotere mobil/emulator
+- Nb nr2: refresh-knappen er der pga bildet og informasjonen hentes async
 ```
