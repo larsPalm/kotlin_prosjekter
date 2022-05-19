@@ -20,11 +20,11 @@ class SharedPrefInterface(var context: Context) {
             editor.putInt("number", data.getInt("number"))
             editor.putInt("vekt", data.getInt("vekt"))
             editor.putString("img", data.getString("img"))
-            editor.putString("type", data.getString("type(s)"))
+            editor.putString("type", data.getString("type"))
             editor.putString("attributes", data.getString("attributes"))
             editor.putString("msg", "")
             editor.apply()
-            Log.d("SharedPref","valid")
+            Log.d("SharedPref","valid pokemon")
         }catch (e:Exception){
             val editor = sharedPref.edit()
             editor.putString("name", "")
@@ -34,8 +34,34 @@ class SharedPrefInterface(var context: Context) {
             editor.putString("attributes", "")
             editor.putString("msg", data.getString("msg"))
             editor.apply()
-            Log.d("SharedPref","invalid")
+            Log.d("SharedPref","invalid pokemon")
         }
+    }
+    fun storeAttack(data:JSONObject){
+        try{
+            val editor = sharedPref.edit()
+            editor.putString("AttackName", data.getString("name"))
+            editor.putString("AttackType", data.getString("type"))
+            editor.putInt("AttackPower", data.getInt("power"))
+            editor.putInt("AttackCount", data.getInt("antall"))
+            editor.putInt("AttackAcc", data.getInt("accuracy"))
+            editor.putString("AttackDc", data.getString("damage_class"))
+            editor.putString("AttackMsg", data.getString("msg_attack"))
+            editor.apply()
+            Log.d("SharedPref","valid attack")
+        } catch (e:Exception){
+            val editor = sharedPref.edit()
+            editor.putString("AttackName", "")
+            editor.putString("AttackType", "")
+            editor.putInt("AttackPower", 0)
+            editor.putInt("AttackCount", 0)
+            editor.putInt("AttackAcc", 0)
+            editor.putString("AttackDc", "")
+            editor.putString("AttackMsg", data.getString("msg_attack"))
+            editor.apply()
+            Log.d("SharedPref","invalid attack")
+        }
+
     }
     fun getStoredImg():String?{
         return sharedPref.getString("img", "")
@@ -62,5 +88,26 @@ class SharedPrefInterface(var context: Context) {
     }
     fun getStoredMsg():String?{
         return sharedPref.getString("msg", "")
+    }
+    fun getStoredAttackMsg():String?{
+        return sharedPref.getString("AttackMsg", "")
+    }
+    fun getStoredAttackType():String?{
+        return sharedPref.getString("AttackType", "")
+    }
+    fun getStoredAttackName():String?{
+        return sharedPref.getString("AttackName", "")
+    }
+    fun getStoredAttackDc():String?{
+        return sharedPref.getString("AttackDc", "")
+    }
+    fun getStoredAttackPower():Int?{
+        return sharedPref.getInt("AttackPower", 0)
+    }
+    fun getStoredAttackAcc():Int?{
+        return sharedPref.getInt("AttackAcc", 0)
+    }
+    fun getStoredAttackCount():Int?{
+        return sharedPref.getInt("AttackCount", 0)
     }
 }

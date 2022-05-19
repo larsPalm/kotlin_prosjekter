@@ -40,4 +40,19 @@ class DataInterface(var context: Context) {
         }
         si.volleyGet("getAPokemon/$end", dataCallback)
     }
+    fun getAttack(end: String){
+        val attackCallback = object : Callback {
+            override fun callback(data: Any?) {
+                if (data is String) {
+                    Log.d("Data",data.toString())
+                    val obj = JSONObject(data as String?)
+                    spi.storeAttack(obj)
+                } else {
+                    Toast.makeText(context, "Invalid response from server", Toast.LENGTH_LONG)
+                        .show()
+                }
+            }
+        }
+        si.volleyGet("getMove/$end", attackCallback)
+    }
 }

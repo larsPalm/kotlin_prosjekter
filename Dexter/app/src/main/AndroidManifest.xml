@@ -13,10 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dexter"
         android:usesCleartextTraffic="true">
+        <activity android:name=".AttackActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"
-                    android:windowSoftInputMode="stateAlwaysHidden"/>
+                <action
+                    android:name="android.intent.action.MAIN"
+                    android:windowSoftInputMode="stateAlwaysHidden" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

@@ -2,6 +2,7 @@ package com.example.dexter
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
         bt.setBackgroundColor(Color.WHITE)
         var bt2 = findViewById<Button>(R.id.btnRefresh)
         bt2.setBackgroundColor(Color.WHITE);
+        var btn3 = findViewById<Button>(R.id.btnGoToAttack)
+        btn3.setBackgroundColor(Color.WHITE);
         name = findViewById(R.id.pName)
         type = findViewById(R.id.pType)
         vekt = findViewById(R.id.pVekt)
@@ -127,4 +130,9 @@ class MainActivity : AppCompatActivity() {
             iMm.hideSoftInputFromWindow(v.windowToken, 0)
             v.clearFocus()
         }
+
+    fun goToAttack(view: View) {
+        val intent = Intent(this, AttackActivity::class.java)
+        startActivity(intent)
+    }
 }

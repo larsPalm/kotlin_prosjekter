@@ -6,36 +6,35 @@
     android:layout_height="match_parent"
     android:background="@color/red"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".AttackActivity">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="name or number of the pokemon"
+            android:hint="search for attack (use '-' for space)"
             android:imeOptions="actionDone"
-            android:id="@+id/pokemonText"/>
+            android:id="@+id/attackText"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnGetPokemon"
-            android:onClick="getPokemon"
+            android:id="@+id/btnGetAttack"
+            android:onClick="getAttack"
             android:text="submit"/>
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnRefresh"
-        android:onClick="refresh"
+        android:id="@+id/btnRefreshAttack"
+        android:onClick="refreshAttack"
         android:text="refresh"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnGoToAttack"
-        android:onClick="goToAttack"
-        android:text="Attack search"/>
+        android:id="@+id/btnGoToPokemon"
+        android:onClick="goToPokemon"
+        android:text="Search pokemon"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pName"
+            android:id="@+id/aName"
             android:textSize="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
@@ -52,16 +51,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/number"
-            android:textSize="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/pVekt"
+            android:id="@+id/aType"
             android:textSize="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
@@ -72,11 +62,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pType"
+            android:id="@+id/aCount"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aPower"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aAcc"
+            android:textSize="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/aDc"
             android:textSize="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
@@ -84,35 +105,5 @@
             android:layout_marginBottom="10dp"/>
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/pAtt"
-        android:textSize="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/noImg"/>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_gravity="center"
-        android:background="@color/white"
-        android:id="@+id/imgLayout">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/black"
-            android:padding="10dp"
-            android:id="@+id/img"/>
-    </LinearLayout>
 
 </LinearLayout>
