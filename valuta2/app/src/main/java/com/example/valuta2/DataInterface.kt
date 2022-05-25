@@ -21,19 +21,8 @@ class DataInterface(var context: Context) {
             val dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd")
             val now = LocalDateTime.now()
             val date = dtf.format(now)
-            Log.d(TAG, date)
-            spi.putDate("")
-            val value: String = SharedPrefInterface(context).date!!
-            val compare = value.compareTo(date)
-            val compare2 = date.compareTo(date)
-            val compare3 = "2021-07-10".compareTo(date)
-            Log.d(TAG, compare.toString())
-            Log.d(TAG, compare2.toString())
-            Log.d(TAG, compare3.toString())
             val oldDate: String = SharedPrefInterface(context).date!!
             val currentDate = dtf.format(now)
-            Log.d(TAG, "$oldDate   $currentDate")
-            Log.d(TAG, "---" + (oldDate.compareTo(currentDate) < 0).toString())
             if (oldDate.compareTo(currentDate) < 0) {
                 val lrCallback = object : Callback {
                     override fun callback(data: Any?) {
@@ -48,10 +37,6 @@ class DataInterface(var context: Context) {
                                 Log.d(
                                     TAG,
                                     "return was empty, data length =" + data.toString().length + ", end"
-                                )
-                                Log.d(
-                                    TAG,
-                                    "return was empty, data =$data, end"
                                 )
                             } else {
                                 try {

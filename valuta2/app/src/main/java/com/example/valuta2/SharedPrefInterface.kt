@@ -41,7 +41,7 @@ class SharedPrefInterface(var context: Context) {
             hm.forEach { (k: String, v: Double) ->
                 putValue(
                     k,
-                    v
+                    v, date
                 )
             }
             putBaseCurs(base_cur)
@@ -57,8 +57,9 @@ class SharedPrefInterface(var context: Context) {
         editor.apply()
     }
 
-    private fun putValue(key: String, value: Double) {
+    private fun putValue(key: String, value: Double,date:String) {
         val editor = sharedPref.edit()
+        Log.d(TAG, "$date   $key:$value")
         editor.putString(key, value.toString())
         editor.apply()
     }

@@ -18,10 +18,10 @@ class ServerInterface(private val baseUrl: String, private val context: Context)
         val queue: RequestQueue = Volley.newRequestQueue(context)
 
         val sr = StringRequest(Request.Method.GET, url,
-            Response.Listener {
+            {
                     response -> success.callback(response)
             },
-            Response.ErrorListener{
+            {
                     error -> Log.d(TAG, "Got error when querying on: " + url + " error: " + error.toString())
                 Toast.makeText(context, error.toString(), Toast.LENGTH_LONG).show() })
         queue.add(sr)

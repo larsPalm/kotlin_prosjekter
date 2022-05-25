@@ -37,33 +37,18 @@ class ImgFragment(var context2: Context): Fragment(){
             context2, R.layout.spinner_item, aList
         )
         Collections.sort(aList)
-        //Log.d(TAG,aList.toString())
-        //activity = context2
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item2)
         spinnerTo = view.findViewById<View>(R.id.to_cur) as Spinner
         spinnerFrom = view.findViewById<View>(R.id.from_cur) as Spinner
         spinnerTo!!.adapter = spinnerArrayAdapter
         spinnerFrom!!.adapter = spinnerArrayAdapter
         img = view.findViewById<View>(R.id.img) as ImageView
-        /*viewModel = ViewModelProvider(this.getActivity())[ImgViewModel::class.java]
-        val imgObserver: Observer<String> =
-            Observer { imgString ->
-                try{
-                    val decodedString = Base64.decode(imgString, Base64.DEFAULT)
-                    val decodedByte =
-                        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-                    img!!.setImageBitmap(decodedByte)
-                }catch(e:Exception){}
-            }
-        (viewModel as ImgViewModel).currentImg.observe(activity, imgObserver)*/
         DataInterface(context2).storedImg
         val bt = view.findViewById<Button>(R.id.btnSubmit)
         bt.setOnClickListener{
             val v1 = spinnerFrom!!.selectedItem.toString()
             val v2 = spinnerTo!!.selectedItem.toString()
             DataInterface(context2).getImg(v1, v2)
-            val urlString = "http://10.0.2.2:8080/compareImg2/$v1/$v2"
-            /*Log.d(TAG, urlString)*/
             Log.d(TAG, SharedPrefInterface(context2).img!!)
             DataInterface(context2).storedImg
             try{
