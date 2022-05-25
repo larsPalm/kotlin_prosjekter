@@ -32,7 +32,6 @@ class ImgActivity : AppCompatActivity() {
             this, R.layout.spinner_item, aList
         )
         Collections.sort(aList)
-        //Log.d(TAG,aList.toString())
         activity = this
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_item2)
         spinnerTo = findViewById<View>(R.id.to_cur) as Spinner
@@ -62,9 +61,6 @@ class ImgActivity : AppCompatActivity() {
         val v1 = spinnerFrom!!.selectedItem.toString()
         val v2 = spinnerTo!!.selectedItem.toString()
         DataInterface(this).getImg(v1, v2)
-        val urlString = "http://10.0.2.2:8080/compareImg2/$v1/$v2"
-        /*Log.d(TAG, urlString)
-        Log.d(TAG, SharedPrefInterface(this).img!!)*/
         DataInterface(this).storedImg
         try{
             val decodedString = Base64.decode(SharedPrefInterface(this).img, Base64.DEFAULT)

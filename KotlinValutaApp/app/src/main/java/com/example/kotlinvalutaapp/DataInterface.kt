@@ -11,8 +11,16 @@ import java.util.*
 
 
 class DataInterface(var context: Context) {
-    var si: ServerInterface
-    var spi: SharedPrefInterface
+    var si: ServerInterface = ServerInterface(
+        String.format(
+            Locale.getDefault(),
+            "http://%s:%s/",
+            context.resources.getString(R.string.server_ip),
+            context.resources.getString(R.string.server_port)
+        ),
+        context
+    )
+    var spi: SharedPrefInterface = SharedPrefInterface(context)
 
     //checks if the response from the server is empty or not
     val data: Unit
@@ -22,18 +30,8 @@ class DataInterface(var context: Context) {
             val now = LocalDateTime.now()
             val date = dtf.format(now)
             Log.d(TAG, date)
-            spi.putDate("")
-            val value: String = SharedPrefInterface(context).date!!
-            val compare = value.compareTo(date)
-            val compare2 = date.compareTo(date)
-            val compare3 = "2021-07-10".compareTo(date)
-            Log.d(TAG, compare.toString())
-            Log.d(TAG, compare2.toString())
-            Log.d(TAG, compare3.toString())
             val oldDate: String = SharedPrefInterface(context).date!!
             val currentDate = dtf.format(now)
-            Log.d(TAG, "$oldDate   $currentDate")
-            Log.d(TAG, "---" + (oldDate.compareTo(currentDate) < 0).toString())
             if (oldDate.compareTo(currentDate) < 0) {
                 val lrCallback = object : Callback {
                     override fun callback(data: Any?) {
@@ -91,16 +89,4 @@ class DataInterface(var context: Context) {
         var livedata = MutableLiveData<String>()
     }
 
-    init {
-        si = ServerInterface(
-            String.format(
-                Locale.getDefault(),
-                "http://%s:%s/",
-                context.resources.getString(R.string.server_ip),
-                context.resources.getString(R.string.server_port)
-            ),
-            context
-        )
-        spi = SharedPrefInterface(context)
-    }
 }
