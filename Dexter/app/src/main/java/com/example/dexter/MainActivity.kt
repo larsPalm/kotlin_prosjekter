@@ -36,6 +36,14 @@ class MainActivity : AppCompatActivity() {
         bt2.setBackgroundColor(Color.WHITE);
         var btn3 = findViewById<Button>(R.id.btnGoToAttack)
         btn3.setBackgroundColor(Color.WHITE);
+        var btn4 = findViewById<Button>(R.id.btnSearch1PlusNumber)
+        btn4.setBackgroundColor(Color.WHITE);
+        var btn5 = findViewById<Button>(R.id.btnSearch10PlusNumber)
+        btn5.setBackgroundColor(Color.WHITE);
+        var btn6 = findViewById<Button>(R.id.btnSearch10MinusNumber)
+        btn6.setBackgroundColor(Color.WHITE);
+        var btn7 = findViewById<Button>(R.id.btnSearch1MinusNumber)
+        btn7.setBackgroundColor(Color.WHITE);
         name = findViewById(R.id.pName)
         type = findViewById(R.id.pType)
         vekt = findViewById(R.id.pVekt)
@@ -134,5 +142,88 @@ class MainActivity : AppCompatActivity() {
     fun goToAttack(view: View) {
         val intent = Intent(this, AttackActivity::class.java)
         startActivity(intent)
+    }
+
+    fun search10PlusNumber(view: View) {
+        var numberName = SharedPrefInterface(this).getStoredNumber()
+        val msg = SharedPrefInterface(this).getStoredMsg()
+        var newNumber = 1
+        if(msg.equals("")){
+            try{
+                newNumber = numberName!!
+            }catch (e:Exception){newNumber = 1}
+            Log.d(TAG, newNumber.toString());
+            if(newNumber in 1..887){
+                newNumber += 10
+                DataInterface(this).getInformation(newNumber.toString())
+            } else{
+                DataInterface(this).getInformation(newNumber.toString())
+            }
+        }else{
+            DataInterface(this).getInformation(newNumber.toString())
+        }
+        refresh(view)
+    }
+    fun search10MinusNumber(view: View) {
+        var numberName = SharedPrefInterface(this).getStoredNumber()
+        val msg = SharedPrefInterface(this).getStoredMsg()
+        var newNumber = 1
+        if(msg.equals("")){
+            try{
+                newNumber = numberName!!
+            }catch (e:Exception){newNumber = 1}
+            Log.d(TAG, newNumber.toString());
+            if(newNumber in 11..897){
+                newNumber -= 10
+                DataInterface(this).getInformation(newNumber.toString())
+            } else{
+                DataInterface(this).getInformation(newNumber.toString())
+            }
+        }else{
+            DataInterface(this).getInformation(newNumber.toString())
+        }
+        refresh(view)
+    }
+    fun search1PlusNumber(view: View) {
+        var numberName = SharedPrefInterface(this).getStoredNumber()
+        val msg = SharedPrefInterface(this).getStoredMsg()
+        var newNumber = 1
+        if(msg.equals("")){
+            try{
+                newNumber = numberName!!
+            }catch (e:Exception){newNumber = 1}
+            Log.d(TAG, newNumber.toString());
+            if(newNumber in 1..896){
+                newNumber += 1
+                DataInterface(this).getInformation(newNumber.toString())
+            } else{
+                DataInterface(this).getInformation(newNumber.toString())
+            }
+        }else{
+            DataInterface(this).getInformation(newNumber.toString())
+        }
+        refresh(view)
+    }
+    fun search1MinusNumber(view: View) {
+        var numberName = SharedPrefInterface(this).getStoredNumber()
+        val msg = SharedPrefInterface(this).getStoredMsg()
+        var newNumber = 1
+        Log.d(TAG,"-----"+msg)
+        Log.d(TAG,"......."+msg.equals("").toString())
+        if(msg.equals("")){
+            try{
+                newNumber = numberName!!
+            }catch (e:Exception){newNumber = 1}
+            Log.d(TAG, newNumber.toString());
+            if(newNumber in 2..897){
+                newNumber -= 1
+                DataInterface(this).getInformation(newNumber.toString())
+            } else{
+                DataInterface(this).getInformation(newNumber.toString())
+            }
+        }else{
+            DataInterface(this).getInformation(newNumber.toString())
+        }
+        refresh(view)
     }
 }

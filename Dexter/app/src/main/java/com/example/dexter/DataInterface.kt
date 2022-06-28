@@ -25,7 +25,7 @@ class DataInterface(var context: Context) {
         )
         spi = SharedPrefInterface(context)
     }
-    fun getInformation(end:String){
+    fun getInformation(end: String){
         val dataCallback = object : Callback {
             override fun callback(data: Any?) {
                 if (data is String) {

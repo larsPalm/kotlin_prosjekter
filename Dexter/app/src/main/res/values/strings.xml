@@ -2,4 +2,8 @@
     <string name="app_name">Dexter</string>
     <!-- Shared Preferences Files -->
     <string name="preference_user_data">com.example.dexter.PREFERENCE_USER_DATA</string>
+    <string name="up_one">↑</string>
+    <string name="down_ten">⟵</string>
+    <string name="up_ten">⟶</string>
+    <string name="down_one">↓</string>
 </resources>
